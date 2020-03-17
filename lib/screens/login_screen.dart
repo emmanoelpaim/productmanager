@@ -13,17 +13,18 @@ class LoginScreen extends StatelessWidget {
       ),
       body: Container(
         child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Column(
+          padding: const EdgeInsets.all(16.0),
+          child: ListView(
             children: <Widget>[
-              Text("Usuario",style: TextStyle(fontSize: 30.0),),
+              Text("Usuário",style: TextStyle(fontSize: 30.0),),
               TextField(
                 obscureText: true,
                 decoration: InputDecoration(
                   border: OutlineInputBorder(),
-                  labelText: 'Digite seu Usuario',
+                  labelText: 'Digite seu Usuário',
                 ),
               ),
+              Divider(),
               Text("Senha",style: TextStyle(fontSize: 30.0),),
               TextField(
                 obscureText: true,
@@ -32,9 +33,12 @@ class LoginScreen extends StatelessWidget {
                   labelText: 'Digite sua Senha',
                 ),
               ),
+              SizedBox(
+                height: 30.0,
+              ),
               RaisedButton(
                 onPressed: () {
-                  Navigator.push(
+                  Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(
                           builder: (context) => HomeScreen(
